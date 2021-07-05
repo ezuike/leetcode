@@ -4,7 +4,7 @@ package com.leetcode.binarytree;
  * leetcode 116
  * 注意点：完美二叉树
  */
-public class PopulatingNextRightPointersInEachNode116 {
+public class PopulatingNextRightPointersInEachNode {
 
 /*
 // Definition for a Node.

@@ -9,31 +9,32 @@ import java.util.List;
  */
 public class SymmetricTree {
 
+    /**
+     * 我们可以实现这样一个递归函数，通过「同步移动」两个指针的方法来遍历这棵树，pp 指针和 qq 指针一开始都指向这棵树的根，随后 pp 右移时，
+     * qq 左移，pp 左移时，qq 右移。每次检查当前 pp 和 qq 节点的值是否相等，如果相等再判断左右子树是否对称。
+     *
+     * @param root
+     * @return
+     */
     public boolean isSymmetric(TreeNode root) {
         if (null == root) {
             return true;
         }
-        List<Integer> values = new LinkedList<>();
-        firstList(root, values);
 
-        for (int i = 0,j = values.size() -1; i < j; i++,j--) {
-            if (values.get(i) != values.get(j)) {
-                return false;
-            }
-        }
-
-        return true;
+        return check(root.left, root.right);
     }
 
-    private void firstList(TreeNode root, List<Integer> values) {
-        if (null == root) {
-            return;
+    private boolean check(TreeNode tree1, TreeNode tree2) {
+        if(null == tree1 && null == tree2) {
+            return true;
         }
-
-        values.add(root.val);
-        firstList(root.left,values);
-        firstList(root.right, values);
-
+        if (null == tree1 || null == tree2) {
+            return false;
+        }
+        // 递归：当前值相等，且树一的左子树与树二的右子树相等，且数一的右子树与树二的左子树相等。
+        return tree1.val == tree2.val
+                && check(tree1.left, tree2.right)
+                && check(tree1.right, tree2.left);
     }
 
     public class TreeNode {

@@ -77,10 +77,10 @@ public class ValidateBinarySearchTree {
         /**
          * 容易出错用例
          *      5
-         *     /  \
-         *   4     6
-         *        /  \
-         *      3     7
+         *     / \
+         *   4    6
+         *       / \
+         *      3   7
          *
          */
         ValidateBinarySearchTree.TreeNode node1 = new ValidateBinarySearchTree.TreeNode(5);

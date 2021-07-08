@@ -1,11 +1,13 @@
 package com.leetcode;
+import com.leetcode.binarytree.BinaryTreeLevelOrderTraversal;
+import com.leetcode.binarytree.MaximumDepthOfBinaryTree;
 import com.leetcode.binarytree.ValidateBinarySearchTree;
 
 public class Main {
 
     public static void main(String[] args) {
-        ValidateBinarySearchTree validateBinarySearchTree = new ValidateBinarySearchTree();
-        validateBinarySearchTree.test001();
+        MaximumDepthOfBinaryTree maximumDepthOfBinaryTree = new MaximumDepthOfBinaryTree();
+        maximumDepthOfBinaryTree.test001();
 
     }
 }

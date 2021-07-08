@@ -1,8 +1,5 @@
 package com.leetcode.binarytree;
 
-import java.util.LinkedList;
-import java.util.List;
-
 /**
  * 对称二叉树
  * leet code:101
@@ -25,7 +22,7 @@ public class SymmetricTree {
     }
 
     private boolean check(TreeNode tree1, TreeNode tree2) {
-        if(null == tree1 && null == tree2) {
+        if (null == tree1 && null == tree2) {
             return true;
         }
         if (null == tree1 || null == tree2) {

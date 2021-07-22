@@ -6,7 +6,7 @@ import java.util.*;
  *
  * leet code:117
  */
-public class PopulatingNextRightPointersInEachNodeii {
+public class PopulatingNextRightPointersInEachNodeII {
 
     public Node connect(Node root) {
         Map<Integer, List<Node>> map = new HashMap<>();

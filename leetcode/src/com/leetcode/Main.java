@@ -1,13 +1,15 @@
 package com.leetcode;
-import com.leetcode.binarytree.BinaryTreeLevelOrderTraversal;
-import com.leetcode.binarytree.MaximumDepthOfBinaryTree;
-import com.leetcode.binarytree.ValidateBinarySearchTree;
+
+import java.util.regex.Pattern;
 
 public class Main {
 
     public static void main(String[] args) {
-        MaximumDepthOfBinaryTree maximumDepthOfBinaryTree = new MaximumDepthOfBinaryTree();
-        maximumDepthOfBinaryTree.test001();
+
+        Pattern pattern = Pattern.compile("[\\w.]{1,3}");
+        String a = ("330101" + "0000000000000000").substring(0, 12);
+
+        System.out.println(pattern.matcher("2323232323").matches());
 
     }
 }

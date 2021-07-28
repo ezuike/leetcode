@@ -1,15 +1,20 @@
 package com.leetcode;
 
+import com.leetcode.sort.ThreeNumSum;
+
 import java.util.regex.Pattern;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Pattern pattern = Pattern.compile("[\\w.]{1,3}");
-        String a = ("330101" + "0000000000000000").substring(0, 12);
+        ThreeNumSum threeNumSum = new ThreeNumSum();
+        threeNumSum.test001();
 
-        System.out.println(pattern.matcher("2323232323").matches());
+        threeNumSum.test002();
 
+        threeNumSum.test003();
+
+        threeNumSum.test004();
     }
 }

@@ -4,35 +4,76 @@ import java.util.*;
 
 /**
  * 15. 三数之和
+ * <p>
+ * 如何节省时间？？
  */
 public class ThreeNumSum {
 
     public List<List<Integer>> threeSum(int[] nums) {
         Set<List<Integer>> result = new HashSet<>();
 
-        // 先排序
+        // 先排序 -5,-4,-3,-2,-1,0,1,2,3,4,5
         Arrays.sort(nums);
 
-        for (int i = 0; i < nums.length; i++) {
-            // 2层循环，最后一个游标 从后往前，
-            int k = nums.length - 1;
-            for (int j = i + 1; j < nums.length; j++) {
+        // 游标法，两边向中间靠拢， ---->负数，正数 <-----
+        int j;
+        int k;
+        int sum;
+        List<Integer> integers;
+        for (int i = 0; i < nums.length - 1; i++) {
+            // 【节省时间】和前一个数一样， 跳过
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+
+            // 第二数从第一个数的后一位开始，向右游走，
+            j = i + 1;
+
+            // 第三个数必定是正数，没有意义了
+            if (nums[i] + nums[j] > 0) {
+                break;
+            }
+            // 第三个数从最后一个数开始，向左游走
+            k = nums.length - 1;
+            sum = nums[i] + nums[j] + nums[k];
+            while (j < k) {
+                // 【节省时间】和前一个数一样，跳过
+                if (j > i + 1 && nums[j] == nums[j - 1]) {
+                    j++;
+                    sum = nums[i] + nums[j] + nums[k];
+                    continue;
+                }
+                // 【节省时间】和后一个数一样，跳过
+                if (k < nums.length - 1 && nums[k] == nums[k + 1]) {
+                    k--;
+                    sum = nums[i] + nums[j] + nums[k];
+                    continue;
+                }
+
+                // 第三个数必定是正数，没有意义了
                 if (nums[i] + nums[j] > 0) {
                     break;
                 }
-                if (j >= k) {
-                    break;
-                }
 
-                while (nums[i] + nums[j] + nums[k] > 0 && j < k) {
+                if (sum < 0) {
+                    j++;
+                } else if (sum > 0) {
                     k--;
-                }
-                if (nums[i] + nums[j] + nums[k] == 0 && i != k && j != k) {
-                    List<Integer> integers = new ArrayList<>();
+                } else {
+                    // sum == 0
+                    integers = new ArrayList<>();
                     integers.add(nums[i]);
                     integers.add(nums[j]);
                     integers.add(nums[k]);
                     result.add(integers);
+                    j++;
+                    k--;
+                }
+
+                if (j < k) {
+                    sum = nums[i] + nums[j] + nums[k];
+                } else {
+                    break;
                 }
             }
         }
@@ -44,6 +85,7 @@ public class ThreeNumSum {
 
         List<List<Integer>> result = threeSum(nums);
 
+        //[[-1, -1, 2], [-1, 0, 1]]
         System.out.println(result);
     }
 
@@ -59,6 +101,7 @@ public class ThreeNumSum {
         int[] nums = new int[]{0, 0, 0};
         List<List<Integer>> result = threeSum(nums);
 
+        // [[0, 0, 0]]
         System.out.println(result);
     }
 
@@ -66,6 +109,15 @@ public class ThreeNumSum {
         int[] nums = new int[]{1, 2, -2, -1};
         List<List<Integer>> result = threeSum(nums);
 
+        // []
+        System.out.println(result);
+    }
+
+    public void test005() {
+        int[] nums = new int[]{3, 0, -2, -1, 1, 2};
+        List<List<Integer>> result = threeSum(nums);
+
+        //[[-2, -1, 3], [-2, 0, 2], [-1, 0, 1]]
         System.out.println(result);
     }
 }

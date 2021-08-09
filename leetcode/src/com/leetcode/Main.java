@@ -1,13 +1,14 @@
 package com.leetcode;
 
-import com.leetcode.sort.MergeIntervals;
+import com.leetcode.binarytree.ConvertSortedListToBinarySearchTree;
+import com.leetcode.sort.InsertionSortList;
+import com.leetcode.sort.SortColors;
 
 public class Main {
 
     public static void main(String[] args) {
-        MergeIntervals mergeIntervals = new MergeIntervals();
-        mergeIntervals.test001();
-        mergeIntervals.test002();
+        ConvertSortedListToBinarySearchTree a = new ConvertSortedListToBinarySearchTree();
+        a.test001();
     }
 
 }

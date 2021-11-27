@@ -1,4 +1,4 @@
-package com.leetcode.sort;
+package com.leetcode.problems.sort;
 
 /**
  * 147. 对链表进行插入排序

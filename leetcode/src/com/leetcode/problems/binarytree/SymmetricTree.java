@@ -1,4 +1,4 @@
-package com.leetcode.binarytree;
+package com.leetcode.problems.binarytree;
 
 /**
  * 对称二叉树

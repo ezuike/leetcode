@@ -1,6 +1,4 @@
-package com.leetcode.sort;
-
-import java.util.Arrays;
+package com.leetcode.problems.sort;
 
 /**
  * 88. 合并两个有序数组

@@ -1,6 +1,4 @@
-package com.leetcode.sort;
-
-import java.util.Arrays;
+package com.leetcode.problems.sort;
 
 /**
  * 75. 颜色分类

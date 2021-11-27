@@ -1,4 +1,4 @@
-package com.leetcode.binarytree;
+package com.leetcode.problems.binarytree;
 
 /**
  * 二叉树展开为链表

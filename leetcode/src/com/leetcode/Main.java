@@ -1,7 +1,7 @@
 package com.leetcode;
 
 import com.leetcode.common.LeetCodeProblem;
-import com.leetcode.sort.LargestNumber;
+import com.leetcode.problems.sort.LargestNumber;
 
 public class Main {
 

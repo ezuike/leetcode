@@ -1,6 +1,4 @@
-package com.leetcode.binarytree;
-
-import com.sun.tools.javac.util.Assert;
+package com.leetcode.problems.binarytree;
 
 import java.util.Iterator;
 import java.util.LinkedList;

@@ -1,6 +1,4 @@
-package com.leetcode.binarytree;
-
-import com.sun.deploy.panel.ITreeNode;
+package com.leetcode.problems.binarytree;
 
 /**
  * 108. 将有序数组转换为二叉搜索树

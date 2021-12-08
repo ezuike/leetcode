@@ -3,7 +3,7 @@ package com.leetcode.enums;
 import java.util.HashMap;
 import java.util.Map;
 
-public enum ResolveType {
+public enum Status {
 
     RESOLVED("resolved", "已解决"),
 
@@ -15,7 +15,7 @@ public enum ResolveType {
     private final String desc;
     private static final Map<String, String> map = new HashMap<>();
 
-    ResolveType(String code, String desc) {
+    Status(String code, String desc) {
         this.code = code;
         this.desc = desc;
     }
@@ -33,7 +33,7 @@ public enum ResolveType {
     }
 
     static {
-        for (ResolveType resolveType : values()) {
+        for (Status resolveType : values()) {
             map.put(resolveType.getCode(), resolveType.getDesc());
         }
     }

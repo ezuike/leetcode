@@ -1,12 +1,13 @@
 package com.leetcode;
 
-import com.leetcode.common.LeetCodeProblem;
-import com.leetcode.problems.sort.LargestNumber;
+import com.leetcode.common.LeetCodeProblemService;
+import com.leetcode.problems.sort.ContainsDuplicate;
+import com.leetcode.problems.sort.MaximumGap;
 
 public class Main {
 
     public static void main(String[] args) {
-        LeetCodeProblem leetcodeMethod = new LargestNumber();
+        LeetCodeProblemService leetcodeMethod = new MaximumGap();
         leetcodeMethod.test();
     }
 

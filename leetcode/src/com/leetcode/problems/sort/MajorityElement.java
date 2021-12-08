@@ -1,6 +1,9 @@
 package com.leetcode.problems.sort;
 
-import com.leetcode.common.LeetCodeProblem;
+import com.leetcode.common.AbstractLeetCodeProblemService;
+import com.leetcode.dto.LeetCodeProblem;
+import com.leetcode.enums.Difficulty;
+import com.leetcode.enums.Status;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +27,19 @@ import java.util.Map;
  * 输入：[2,2,1,1,1,2,2]
  * 输出：2
  */
-public class MajorityElement implements LeetCodeProblem {
+public class MajorityElement extends AbstractLeetCodeProblemService {
+    public MajorityElement() {
+        LeetCodeProblem leetCodeProblem = new LeetCodeProblem();
+        leetCodeProblem.setNumber(169L);
+        leetCodeProblem.setTitle("多数元素");
+        leetCodeProblem.setDifficulty(Difficulty.EASY.getCode());
+
+        leetCodeProblem.setSolvingIdeas("");
+        leetCodeProblem.setStatus(Status.RESOLVED.getCode());
+
+        super.setLeetCodeProblem(leetCodeProblem);
+    }
+
     public int majorityElement(int[] nums) {
         int mid = nums.length / 2;
         Map<Integer, Integer> map = new HashMap<>();
@@ -37,11 +52,6 @@ public class MajorityElement implements LeetCodeProblem {
             map.put(nums[i], sum);
         }
         return 0;
-    }
-
-    @Override
-    public String getResolveType() {
-        return null;
     }
 
     @Override

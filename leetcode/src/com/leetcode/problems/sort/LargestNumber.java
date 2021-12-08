@@ -1,7 +1,9 @@
 package com.leetcode.problems.sort;
 
-import com.leetcode.common.LeetCodeProblem;
-import com.leetcode.enums.ResolveType;
+import com.leetcode.common.AbstractLeetCodeProblemService;
+import com.leetcode.dto.LeetCodeProblem;
+import com.leetcode.enums.Difficulty;
+import com.leetcode.enums.Status;
 
 import java.util.Arrays;
 
@@ -28,20 +30,32 @@ import java.util.Arrays;
  * 输入：nums = [10]
  * 输出："10"
  */
-public class LargestNumber implements LeetCodeProblem {
+public class LargestNumber extends AbstractLeetCodeProblemService {
+
+    public LargestNumber() {
+        LeetCodeProblem leetCodeProblem = new LeetCodeProblem();
+        leetCodeProblem.setNumber(179L);
+        leetCodeProblem.setTitle("最大数");
+        leetCodeProblem.setDifficulty(Difficulty.MEDIUM.getCode());
+
+        /**
+         * 要解决这个题目是有一个技巧的，就是排序的条件和正常的不太一样。我们看给一个数组进行排序的时候，只需要比较两个元素 (假设 x 和 y 是数组的任意两个元素) 的大小即可：
+         * 只要 x > y，那么降序排列的话 y 就应该排在 x 的后面
+         * 只要 x < y，那么降序排列的话 x 就应该排在 y 的后面
+         * 对于这道题目，假设 x 和 y 是数组中任意两个元素，那么 x 是需要排在 y 的前面还是后面呢？这个取决于 xy 和 yx 哪个大哪个小：
+         *
+         * 如果 xy > yx，那么 y 应该排在 x 的后面
+         * 如果 xy < yx，那么 x 应该排在 y 的后面
+         * 比如，x = 30， y = 3，那么 xy = 303，yx = 330，因为 xy < yx ，所以 30 应该在排在 3 的后面，这样就可以得到最大值
+         * @return
+         */
+        leetCodeProblem.setSolvingIdeas("");
+        leetCodeProblem.setStatus(Status.RESOLVED_BY_ANSWER.getCode());
+
+        super.setLeetCodeProblem(leetCodeProblem);
+    }
 
     /**
-     *
-     * 解题思想
-     * 要解决这个题目是有一个技巧的，就是排序的条件和正常的不太一样。我们看给一个数组进行排序的时候，只需要比较两个元素 (假设 x 和 y 是数组的任意两个元素) 的大小即可：
-     *
-     * 只要 x > y，那么降序排列的话 y 就应该排在 x 的后面
-     * 只要 x < y，那么降序排列的话 x 就应该排在 y 的后面
-     * 对于这道题目，假设 x 和 y 是数组中任意两个元素，那么 x 是需要排在 y 的前面还是后面呢？这个取决于 xy 和 yx 哪个大哪个小：
-     *
-     * 如果 xy > yx，那么 y 应该排在 x 的后面
-     * 如果 xy < yx，那么 x 应该排在 y 的后面
-     * 比如，x = 30， y = 3，那么 xy = 303，yx = 330，因为 xy < yx ，所以 30 应该在排在 3 的后面，这样就可以得到最大值
      * @param nums
      * @return
      */
@@ -87,13 +101,9 @@ public class LargestNumber implements LeetCodeProblem {
     }
 
     @Override
-    public String getResolveType() {
-        return ResolveType.RESOLVED_BY_ANSWER.getCode();
-    }
-
-    @Override
     public void test() {
         test001();
         test002();
     }
+
 }
